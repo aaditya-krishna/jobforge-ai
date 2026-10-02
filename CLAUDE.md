@@ -152,7 +152,8 @@ Run `pytest` before considering any phase done.
 - `load_jobs.py` uses `ON CONFLICT DO NOTHING`, so edits to an already-loaded posting are not picked up, and postings removed from a board are never deleted.
 - About half of the fetched postings are non-technical (sales, recruiting, ops), which the tech-focused skills vocabulary covers poorly.
 - Seniority isn't modeled: intern and staff postings for the same role family can rank side by side, because neither embeddings nor skill coverage capture level.
-- Coverage is noisy for jobs with only a few extracted skills (one matched skill out of one gives 100%).
+- Coverage is noisy for jobs with only a few extracted skills (one matched skill out of one gives 100%). The score smooths it with `DEFAULT_PRIOR = 5`; the displayed coverage is still the raw share.
+- Explanations have only been tested with a fake LLM; no live LLM run has been done (no API key configured).
 - `posted_at` comes from the board's first-published date; some evergreen postings date back years, so it is not a reliable freshness signal.
 - The skills vocabulary is hand-built and focused on tech roles.
 - Evaluation set is small (12 synthetic resumes) and labeled by Claude, not by a person; weights were tuned on the same set they're reported on.

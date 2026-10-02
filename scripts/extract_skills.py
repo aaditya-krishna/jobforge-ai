@@ -39,8 +39,14 @@ def phrase_match(extractor: SkillExtractor, jobs: list[tuple]) -> list[tuple[int
 
 
 def keybert(extractor: SkillExtractor, jobs: list[tuple], corpus: list[str]) -> list[tuple[int, str, str]]:
-    # Candidates come from the whole corpus: min_df drops one-off phrases, max_df drops generic ones
-    cv = CountVectorizer(ngram_range=(1, 2), stop_words="english", min_df=10, max_df=0.3).fit(corpus)
+    # Candidates come from the whole corpus: min_df drops one-off phrases, max_df drops generic ones.
+    # min_df scales down for small corpora (e.g. a one-board test fetch) so it stays below max_df.
+    min_df = 10 if len(corpus) >= 1000 else 2
+    try:
+        cv = CountVectorizer(ngram_range=(1, 2), stop_words="english", min_df=min_df, max_df=0.3).fit(corpus)
+    except ValueError as e:  # too few documents for any phrase to pass both thresholds
+        print(f"KeyBERT skipped: {e}")
+        return []
     candidates = filter_candidates(list(cv.get_feature_names_out()), extractor.vocab, extractor.nlp)
     fixed = CountVectorizer(ngram_range=(1, 2), vocabulary=candidates)
     print(f"KeyBERT: {len(cv.vocabulary_)} corpus phrases -> {len(candidates)} candidates after filtering")

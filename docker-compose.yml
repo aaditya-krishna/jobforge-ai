@@ -8,8 +8,8 @@ services:
       POSTGRES_DB: jobforge
     ports:
       # Bound to localhost so the database isn't reachable from your network.
-      # Host port 5433 because a native PostgreSQL install already uses 5432.
-      - "127.0.0.1:5433:5432"
+      # Default host port 5433 because a native PostgreSQL install often owns 5432.
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -17,6 +17,22 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - path: .env
+        required: false  # LLM settings and keys, if any
+    environment:
+      # Inside the compose network the database is the `db` service on its container port
+      DATABASE_URL: postgresql://jobforge:jobforge@db:5432/jobforge
+    ports:
+      - "127.0.0.1:${APP_PORT:-8501}:8501"
+    volumes:
+      - ./data:/app/data  # fetched postings persist on the host
 
 volumes:
   pgdata:
