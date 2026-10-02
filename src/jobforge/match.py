@@ -5,7 +5,9 @@ import psycopg
 
 # HNSW returns at most ef_search rows (default 40), so it must be at least the candidate count
 EF_SEARCH = 200
+# Chosen by scripts/evaluate.py (see data/eval/results.md and DECISIONS.md)
 DEFAULT_W_SEM = 0.7
+DEFAULT_PRIOR = 5.0
 
 RETRIEVE_SQL = """
     SELECT j.id, j.title, j.company, j.location, j.url, 1 - (e.embedding <=> %(q)s) AS similarity
@@ -52,16 +54,20 @@ def load_job_skills(conn: psycopg.Connection, job_ids: list[int],
 
 # --- Pure scoring (no database) -----------------------------------------------------------
 
-def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem: float = DEFAULT_W_SEM) -> dict:
+def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem: float = DEFAULT_W_SEM,
+          prior: float = 0.0) -> dict:
     """Hybrid score: w_sem * semantic similarity + (1 - w_sem) * skill coverage.
 
     Coverage = share of the job's skills the resume has. A job with no extracted skills gets
-    coverage 0, so it competes on semantic similarity alone.
+    coverage 0, so it competes on semantic similarity alone. `prior` > 0 smooths coverage in the
+    score as matched / (job skills + prior), so 1-of-1 no longer beats 9-of-10. The returned
+    `coverage` stays the raw share, so it agrees with the matched/missing lists shown to users.
     """
     matched = resume_skills & job_skills
     coverage = len(matched) / len(job_skills) if job_skills else 0.0
+    smoothed = len(matched) / (len(job_skills) + prior) if job_skills else 0.0
     return {
-        "score": w_sem * semantic + (1 - w_sem) * coverage,
+        "score": w_sem * semantic + (1 - w_sem) * smoothed,
         "semantic": semantic,
         "coverage": coverage,
         "matched": sorted(matched),
@@ -70,13 +76,13 @@ def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem:
 
 
 def rank(candidates: list[dict], job_skills: dict[int, set[str]], resume_skills: set[str],
-         w_sem: float = DEFAULT_W_SEM, top_n: int = 10) -> list[dict]:
+         w_sem: float = DEFAULT_W_SEM, top_n: int = 10, prior: float = 0.0) -> list[dict]:
     """Re-rank retrieved candidates by the hybrid score. Ties break on job_id for stable output.
 
     The same role is often posted once per location; those collapse into the best-scoring copy
     so duplicates don't crowd out other jobs. Other copies' locations are kept in `other_locations`.
     """
-    scored = [{**c, **score(c["similarity"], resume_skills, job_skills.get(c["job_id"], set()), w_sem)}
+    scored = [{**c, **score(c["similarity"], resume_skills, job_skills.get(c["job_id"], set()), w_sem, prior)}
               for c in candidates]
     scored.sort(key=lambda r: (-r["score"], r["job_id"]))
     unique: dict[tuple, dict] = {}
@@ -92,7 +98,7 @@ def rank(candidates: list[dict], job_skills: dict[int, set[str]], resume_skills:
 
 def match_resume(conn: psycopg.Connection, resume_text: str, extractor, k: int = 50, top_n: int = 10,
                  w_sem: float = DEFAULT_W_SEM, methods: tuple[str, ...] = ("phrase_match",),
-                 location: str | None = None) -> tuple[set[str], list[dict]]:
+                 location: str | None = None, prior: float = DEFAULT_PRIOR) -> tuple[set[str], list[dict]]:
     """Full online flow: embed + extract skills from the resume, retrieve k candidates, re-rank.
 
     Returns (resume_skills, ranked results).
@@ -102,4 +108,4 @@ def match_resume(conn: psycopg.Connection, resume_text: str, extractor, k: int =
     resume_skills = extractor.extract(resume_text)
     candidates = retrieve(conn, embed_long(resume_text), k, location)
     skills = load_job_skills(conn, [c["job_id"] for c in candidates], methods)
-    return resume_skills, rank(candidates, skills, resume_skills, w_sem, top_n)
+    return resume_skills, rank(candidates, skills, resume_skills, w_sem, top_n, prior)

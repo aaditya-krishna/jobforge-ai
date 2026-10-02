@@ -19,3 +19,6 @@ data/processed/*
 .idea/
 .DS_Store
 Thumbs.db
+
+# Regenerable labeling worksheet (contains posting excerpts)
+data/eval/to_label.csv

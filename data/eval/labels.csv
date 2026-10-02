@@ -1,0 +1,519 @@
+resume,company,title,relevant,labeler
+backend_engineer,Cloudflare,Senior Software Engineer - Load Balancing,1,claude
+backend_engineer,Asana,Senior Infrastructure Engineer (Software-Focused),1,claude
+backend_engineer,Zoox,Senior/Staff Software Engineer - Ride and Fleet Services,1,claude
+backend_engineer,Okta,Staff Software Engineer,1,claude
+backend_engineer,Affirm,"Senior Software Engineer, Backend (Partner Merchant Interface)",1,claude
+backend_engineer,Cloudflare,"Distributed Systems Engineer - Data Platform (Delivery, Database, Retrieval)",1,claude
+backend_engineer,Toast,"Senior Software Engineer, Backend — Toast International",1,claude
+backend_engineer,MongoDB,"Lead, Platform Engineering",1,claude
+backend_engineer,Datadog,Software Engineer with Systems Depth,1,claude
+backend_engineer,Datadog,Senior Software Engineer - Distributed Systems,1,claude
+backend_engineer,Klaviyo,Senior Software Engineer - Data Platform,1,claude
+backend_engineer,Databricks,"Sr Software Engineer, Infrastructure",1,claude
+backend_engineer,Okta,Senior Site Reliability Engineer,1,claude
+backend_engineer,Elastic,Senior Software Engineer - SSC,1,claude
+backend_engineer,Cloudflare,"Senior Software Engineer, Durable Objects (DO)",0,claude
+backend_engineer,Cloudflare,Senior Software Engineer - Fintech,1,claude
+backend_engineer,GitLab,Professional Services Engineer - West,0,claude
+backend_engineer,Palantir,"Software Engineer, New Grad - Production Infrastructure",0,claude
+backend_engineer,Shield AI,Senior Systems Administrator (R5378),0,claude
+backend_engineer,Cloudflare,"Senior Systems Engineer, Pipelines",1,claude
+backend_engineer,Palantir,DevOps Engineer,0,claude
+backend_engineer,Zoox,Senior Full-stack Engineer - Mapping Web Services,1,claude
+backend_engineer,Okta,Staff Site Reliability Engineer,0,claude
+backend_engineer,Databricks,Sr Software Engineer - Backend,1,claude
+backend_engineer,Okta,Principal Software Engineer,1,claude
+backend_engineer,Okta,Senior Software Engineer – Tooling & Platform (Terraform),0,claude
+backend_engineer,Roblox,Senior Software Engineer - Storage,1,claude
+backend_engineer,Toast,"Software Engineer II, Toast International",1,claude
+backend_engineer,Zoox,Senior/Staff Software Engineer - ML/AI Applications,1,claude
+backend_engineer,Okta,Senior Software Engineer - Fullstack,1,claude
+backend_engineer,Reddit,Software Engineer,0,claude
+backend_engineer,Datadog,Senior Software Engineer - REDAPL Graph Engine,1,claude
+backend_engineer,Anthropic,"Staff + Sr. Software Engineer, Cloud Inference",1,claude
+backend_engineer,Databricks,Senior Software Engineer - Backend,1,claude
+backend_engineer,Coinbase,"Senior Software Engineer, Backend - Payments Platform",1,claude
+backend_engineer,GitLab,"Senior Platform Engineer, GitLab Orbit",1,claude
+backend_engineer,Chime,"Software Engineer, Financial Platform",1,claude
+backend_engineer,Okta,"Software Engineer II, Streaming Foundations",1,claude
+backend_engineer,GitLab,"Staff Backend Engineer, Database Automation (Go)",1,claude
+backend_engineer,GitLab,Professional Services - Technical Architect,1,claude
+ml_engineer,Discord,"Staff Software Engineer, Machine Learning (Consumer Revenue)",1,claude
+ml_engineer,Roblox,"Principal Machine Learning Infrastructure Engineer, Ads & Discovery",0,claude
+ml_engineer,Reddit,Senior Machine Learning Engineer,1,claude
+ml_engineer,Lyft,"Software Engineer Intern, Machine Learning (Summer 2027 - Toronto)",0,claude
+ml_engineer,Lyft,"ML Software Engineer, ETA",1,claude
+ml_engineer,Cloudflare,Senior Machine Learning Engineer,1,claude
+ml_engineer,Roblox,"Distinguished Engineer, Machine Learning - Discovery",0,claude
+ml_engineer,Databricks,Sr. Software Engineer- Backend,0,claude
+ml_engineer,Waymo,"Sr. Machine Learning Engineer, Marketplace ML Platform",1,claude
+ml_engineer,Reddit,"Staff Machine Learning Engineer, Ads ML Efficiency",1,claude
+ml_engineer,Lyft,"Data Science Intern, Algorithms (Summer 2027 - Toronto)",0,claude
+ml_engineer,Databricks,Staff Software Engineer- Foundation Model Inference,1,claude
+ml_engineer,Lyft,"Data Science Intern, Algorithms (Summer 2027 - SF/NYC)",0,claude
+ml_engineer,Databricks,"Staff Software Engineer, Foundational Model Serving",1,claude
+ml_engineer,Reddit,"Staff Machine Learning Engineer, App Ads Modeling",1,claude
+ml_engineer,Databricks,"Sr. Manager, Engineering - Search",0,claude
+ml_engineer,Reddit,"Staff Machine Learning Engineer, Consumer",1,claude
+ml_engineer,Databricks,Staff Backend Software Engineer- (AI Platform),0,claude
+ml_engineer,Reddit,Staff Machine Learning Systems Engineer,1,claude
+ml_engineer,Reddit,Machine Learning Engineer,1,claude
+ml_engineer,Databricks,Staff Software Engineer - Customer Engagement & Docs Platform,0,claude
+ml_engineer,Waymo,"Senior Machine Learning Engineer, Fleet Monitoring & Response",1,claude
+ml_engineer,Databricks,"Staff Software Engineer, Search Quality",1,claude
+ml_engineer,Databricks,"Staff Software Engineer, Foundation Model Inference",1,claude
+ml_engineer,Roblox,"Distinguished Engineer, Machine Learning Systems – Economy",0,claude
+ml_engineer,Reddit,Senior Machine Learning Systems Engineer,1,claude
+ml_engineer,Instacart,"Senior Machine Learning Engineer II, Ads Response Prediction",1,claude
+ml_engineer,Roblox,Senior / Principal Infrastructure Engineer - ML Platform,1,claude
+ml_engineer,Instacart,"Senior Machine Learning Engineer, Digital Twin Platform",1,claude
+ml_engineer,Klaviyo,Senior Machine Learning Engineer,1,claude
+ml_engineer,Cloudflare,Senior Data Scientist,0,claude
+ml_engineer,Databricks,Senior Engineering Manager - Enzyme,0,claude
+ml_engineer,Reddit,"Ads Conversion Modeling, Machine Learning Engineering Manager",0,claude
+ml_engineer,Pinterest,"Staff Machine Learning Engineer, Ads Conversion Core Modeling",1,claude
+ml_engineer,Databricks,"Staff Software Engineer, AI Search",1,claude
+ml_engineer,Databricks,Staff Software Engineer - Distributed Data Systems,0,claude
+ml_engineer,Databricks,"Sr. Engineering Manager, AI Runtime",0,claude
+ml_engineer,Databricks,Staff Software Engineer (Infrastructure),0,claude
+ml_engineer,Databricks,Staff Software Engineer - Backend,0,claude
+ml_engineer,Databricks,Senior Software Engineer - Distributed Data Systems,0,claude
+ml_engineer,Instacart,"Senior Machine Learning Engineer, Ads Response Prediction",1,claude
+ml_engineer,Figma,Software Engineer - Machine Learning,1,claude
+ml_engineer,Databricks,"Staff Machine Learning Engineer, CustomerLake (ML/LLM)",1,claude
+ml_engineer,Pinterest,University Grad Machine Learning Engineer 2027 (Toronto),0,claude
+data_engineer,Gusto,Senior Data Engineer,1,claude
+data_engineer,Databricks,Senior Staff Software Engineer - Enzyme,1,claude
+data_engineer,Databricks,Senior Engineering Manager - Enzyme,0,claude
+data_engineer,Coinbase,"Senior Software Engineer, Data Engineering Platform",1,claude
+data_engineer,Databricks,Senior Staff Software Engineer - Lakeflow Pipelines Datasets,1,claude
+data_engineer,Databricks,Sr. Engineering Manager - Pipelines Engine,0,claude
+data_engineer,Anthropic,Recruiting Analytics Data Engineer,1,claude
+data_engineer,Vercel,Software Engineer - Data Platform,1,claude
+data_engineer,Samsara,Data Engineer,1,claude
+data_engineer,Databricks,"Sr. Designated Support Engineer, Apache Spark™",0,claude
+data_engineer,Cloudflare,"Senior Systems Engineer, Pipelines",1,claude
+data_engineer,Databricks,Sr. Solutions Architect - Financial Services (Strategic Banking),0,claude
+data_engineer,Databricks,Senior Designated Support Engineer,0,claude
+data_engineer,Waymo,Sr. Staff Data Architect,1,claude
+data_engineer,Databricks,Sr. Solutions Engineer - Public Sector (Defense Industrial Base),0,claude
+data_engineer,Databricks,"Senior Manager, Infrastructure Data Science",0,claude
+data_engineer,Databricks,Senior Software Engineer - Fullstack,0,claude
+data_engineer,Databricks,Staff Designated Support Engineer,0,claude
+data_engineer,Databricks,Tech Lead Manager - Lakebase,0,claude
+data_engineer,Databricks,Sr. Solutions Engineer - Public Sector (DoW - 4th Estate),0,claude
+data_engineer,Databricks,Solutions Architect - Financial Services (Professional Services),0,claude
+data_engineer,Samsara,Senior Data Engineer,1,claude
+data_engineer,Waymo,Senior Data Engineer,1,claude
+data_engineer,Airbnb,"Staff Software Engineer, Data Warehouse",1,claude
+data_engineer,Databricks,"Sr. Product Manager, Data Engineering",0,claude
+data_engineer,Databricks,Solutions Architect - Emerging Enterprise,0,claude
+data_engineer,Databricks,"Solutions Architect - Communications, Media, Entertainment and Games",0,claude
+data_engineer,Databricks,"Sr. Product Manager, Lakeflow",0,claude
+data_engineer,Databricks,Solutions Architect - Emerging Enterprise (Startups),0,claude
+data_engineer,Databricks,Solutions Architect - Public Sector,0,claude
+data_engineer,Databricks,Solutions Architect - Public Sector (SLED),0,claude
+data_engineer,Databricks,Staff Software Engineer - Backend,0,claude
+data_engineer,Pinterest,"Principal Engineer, Big Data Platform",1,claude
+data_engineer,Databricks,"Staff Software Engineer, Lakeflow Pipelines DR",1,claude
+data_engineer,Samsara,Software Engineer - Data Platform,1,claude
+data_engineer,Databricks,Sr. Software Engineer - Backend,0,claude
+data_engineer,Databricks,Staff Software Engineer - Fullstack,0,claude
+data_engineer,Chime,"Senior Software Engineer, Data Engineering",1,claude
+data_engineer,Databricks,Sr. Solutions Architect - Public Sector (Defense Industrial Base),0,claude
+data_engineer,Databricks,Solutions Architect - Financial Services (Banking and Payments),0,claude
+data_engineer,Databricks,Sr. Solutions Architect - Public Sector (SLED),0,claude
+frontend_engineer,Palantir,Software Engineer - Frontend Developer Productivity,1,claude
+frontend_engineer,Robinhood,Web Engineer,1,claude
+frontend_engineer,Gusto,"Staff Software Engineer, HR Experience",1,claude
+frontend_engineer,Vercel,Software Engineer - Next.js,1,claude
+frontend_engineer,Coinbase,Senior Software Engineer,1,claude
+frontend_engineer,Reddit,"Senior Frontend Engineer, Ads Creative",1,claude
+frontend_engineer,Vercel,Forward-Deployed Engineer,0,claude
+frontend_engineer,Zoox,Senior Full-stack Engineer - Mapping Web Services,1,claude
+frontend_engineer,Pinterest,"Staff Software Engineer, Web Product Enablement",1,claude
+frontend_engineer,Affirm,"Senior Software Engineer, Frontend (App Experience)",1,claude
+frontend_engineer,MongoDB,Software Engineer 3,0,claude
+frontend_engineer,Okta,Staff Software Engineer-FullStack,1,claude
+frontend_engineer,Chime,"Senior Software Engineer, Growth",1,claude
+frontend_engineer,Figma,Software Engineer - Full Stack,1,claude
+frontend_engineer,GitLab,"Backend Engineer, Create: Source Code Experience (Ruby)",0,claude
+frontend_engineer,Chime,"Visual Designer, Web",0,claude
+frontend_engineer,Vercel,Engineering Manager - Next.js,0,claude
+frontend_engineer,Reddit,"Front End Software Engineer, Media Player",1,claude
+frontend_engineer,Affirm,"Software Engineer I, Frontend (Upfunnel)",1,claude
+frontend_engineer,Roblox,"Software Engineer, Discovery UX",1,claude
+frontend_engineer,Palantir,Software Engineer - Defense Applications,0,claude
+frontend_engineer,Databricks,Sr. Solutions Engineer,0,claude
+frontend_engineer,Databricks,Sr Full Stack Developer (AI Agents),1,claude
+frontend_engineer,GitLab,"Senior Frontend Engineer (Vue), Create:  Repository Management",1,claude
+frontend_engineer,Palantir,Web Design Engineer,1,claude
+frontend_engineer,Databricks,Sr. Developer Advocate - Neon,0,claude
+frontend_engineer,Instacart,Sr Software Engineer II - Ads Manager (Front End),1,claude
+frontend_engineer,Elastic,Senior Software Engineer - Prism - Security,0,claude
+frontend_engineer,GitLab,"Senior Software Engineer (Typescript), AI Clients: Duo CLI",0,claude
+frontend_engineer,Figma,Software Engineer - Mobile Web,1,claude
+frontend_engineer,Datadog,Staff Software Engineer - Frontend,1,claude
+frontend_engineer,Samsara,Software Engineering Internship - San Francisco,0,claude
+frontend_engineer,Coinbase,"Senior Software Engineer, Simple Trade Experience",1,claude
+frontend_engineer,Robinhood,"Staff Web Engineer, Legend",1,claude
+frontend_engineer,Databricks,Sr. Solutions Engineer - Digital Native Business (Strategic Accounts),0,claude
+frontend_engineer,Anthropic,"Front End Engineer, Marketing",1,claude
+frontend_engineer,GitLab,"Fullstack Engineer (TypeScript), AI Engineering: Duo Client SDK",0,claude
+frontend_engineer,GitLab,"Backend Engineer, AI Engineering: Duo Chat",0,claude
+frontend_engineer,Chime,"Software Engineer, Growth",1,claude
+frontend_engineer,Reddit,Software Engineer,0,claude
+frontend_engineer,Discord,"Senior Full-Stack Software Engineer, Growth",1,claude
+frontend_engineer,Okta,"Software Engineer, Professional Services R&D",0,claude
+frontend_engineer,Discord,"Senior Software Engineer, Growth",1,claude
+frontend_engineer,Asana,Senior Infrastructure Engineer (Software-Focused),0,claude
+ios_engineer,Anthropic,"Staff Software Engineer, iOS",1,claude
+ios_engineer,Duolingo,"Senior Software Engineer, iOS, Growth",1,claude
+ios_engineer,Duolingo,"Software Engineer II, iOS, Growth",1,claude
+ios_engineer,Robinhood,"Software Developer Intern, iOS (Summer 2027)",0,claude
+ios_engineer,Roblox,"Senior Software Engineer, iOS",1,claude
+ios_engineer,Lyft,Senior Software Engineer - iOS,1,claude
+ios_engineer,Coinbase,"Staff Software Engineer, Native Mobile",1,claude
+ios_engineer,Robinhood,"Software Engineering Intern, iOS (Summer 2027)",0,claude
+ios_engineer,Coinbase,"Senior Software Engineer, Mobile QA",0,claude
+ios_engineer,Pinterest,"Software Engineer, iOS",1,claude
+ios_engineer,Pinterest,"Engineering Manager II, iOS Modernization",0,claude
+ios_engineer,Coinbase,"Senior Staff Software Engineer, Native Mobile",1,claude
+ios_engineer,Anthropic,"Staff Software Engineer, Android",0,claude
+ios_engineer,Gusto,"Senior Staff Software Engineer, iOS Platform",1,claude
+ios_engineer,Coinbase,"Senior Software Engineer, Native Mobile",1,claude
+ios_engineer,Instacart,iOS Developer,1,claude
+ios_engineer,Chime,Senior Mobile Cross Platform Engineer,1,claude
+ios_engineer,Duolingo,"Senior/Software Engineer II, Android",0,claude
+ios_engineer,Waymo,"Staff iOS Engineer, Growth",1,claude
+ios_engineer,Coinbase,"Staff Software Engineer, Mobile QA",0,claude
+ios_engineer,Robinhood,"iOS Engineer, Money Experience",1,claude
+ios_engineer,Duolingo,"Senior Software Engineer, iOS, Monetization",1,claude
+ios_engineer,Reddit,"Senior iOS Engineer, Community Builders",1,claude
+ios_engineer,Airbnb,"Senior Mobile Software Engineer, Quality Engineering",0,claude
+ios_engineer,Figma,Software Engineer - Mobile Web,0,claude
+ios_engineer,Klaviyo,Software Engineer II - SMS International,0,claude
+ios_engineer,Lyft,Staff Android Tooling Engineer,0,claude
+ios_engineer,Affirm,"Manager, Software Engineering (App Experiences)",0,claude
+ios_engineer,Robinhood,Staff Android Engineer,0,claude
+ios_engineer,Pinterest,"Engineering Manager II, Android Modernization",0,claude
+ios_engineer,Airbnb,"Mobile Software Engineer, Quality Platform",0,claude
+ios_engineer,Shield AI,Summer 2027 - Software Engineer Intern,0,claude
+ios_engineer,Robinhood,"Senior iOS Engineer, Crypto Trading",1,claude
+ios_engineer,Instacart,"Staff Android Engineer, Pick & Deliver",0,claude
+ios_engineer,Okta,"Senior Software Engineer in Test, UI Platform",0,claude
+ios_engineer,Reddit,"Staff iOS Engineer, Media Foundation",1,claude
+ios_engineer,Affirm,"Software Engineer II, Fullstack (App Experience)",0,claude
+ios_engineer,Anthropic,IT Support Engineer,0,claude
+ios_engineer,Waymo,"Staff Android Engineer, In-Car Experience",0,claude
+ios_engineer,Duolingo,Senior iOS Engineer,1,claude
+ios_engineer,Robinhood,"Software Engineering Intern, Android (Summer 2027)",0,claude
+ios_engineer,Airbnb,"Software Engineer, Passport & Commerce, iOS",1,claude
+ios_engineer,Pinterest,"Engineering Manager II, Media Rendering",0,claude
+ios_engineer,Waymo,"Senior Android Engineer, In-Car Experience",0,claude
+ios_engineer,Samsara,Software Engineering Internship - San Francisco,0,claude
+ios_engineer,Spotify,Senior C++/iOS Engineer - User Platform,1,claude
+sre_platform,Okta,Staff Site Reliability Engineer,1,claude
+sre_platform,Okta,Senior Site Reliability Engineer,1,claude
+sre_platform,MongoDB,"Site Reliability Engineer (Senior or Staff), Deployments",1,claude
+sre_platform,Palantir,"Software Engineer, New Grad - Production Infrastructure",0,claude
+sre_platform,Nuro,"Software Engineer, Cloud Infrastructure and Observability",1,claude
+sre_platform,Palantir,DevOps Engineer,1,claude
+sre_platform,Palantir,"Software Engineer, Internship - Production Infrastructure",0,claude
+sre_platform,MongoDB,"Lead, Platform Engineering",1,claude
+sre_platform,Asana,Senior Infrastructure Engineer (Software-Focused),1,claude
+sre_platform,Datadog,Software Engineer with Systems Depth,1,claude
+sre_platform,Samsara,"Sr. Software Engineer, Cloud Platform",1,claude
+sre_platform,Okta,"Staff SRE for K8s Platform Team (AWS, Kubernetes, Platform Creation, Helm, Karpenter, Istio)",1,claude
+sre_platform,Databricks,"Sr Software Engineer, Infrastructure",1,claude
+sre_platform,Elastic,Sr. Salesforce DevOps Engineer,0,claude
+sre_platform,Okta,Staff Site Reliability Engineer - Kubernetes,1,claude
+sre_platform,Shield AI,Staff Cloud Engineer (R5801),1,claude
+sre_platform,Anthropic,"Staff Software Engineer, Continuous Integration",1,claude
+sre_platform,GitLab,"Engineering Manager, Core DevOps",0,claude
+sre_platform,MongoDB,Cloud Operations Engineer,1,claude
+sre_platform,Shield AI,"Staff Engineer, Platform (R6019)",1,claude
+sre_platform,Klaviyo,"Principal Engineer, Core Infrastructure",1,claude
+sre_platform,Shield AI,Staff DevSecOps Engineer (R5824),1,claude
+sre_platform,Zoox,Senior/Staff Software Engineer - Ride and Fleet Services,0,claude
+sre_platform,GitLab,"Distinguished Engineer, Core DevOps",0,claude
+sre_platform,Samsara,Senior Software Engineer I/II - Infrastructure,1,claude
+sre_platform,Elastic,Senior Site Reliability Engineer (Hosted Infra),1,claude
+sre_platform,Cloudflare,"Software Engineer, Workers Deploy & Config",1,claude
+sre_platform,Reddit,Senior Software Engineer - Full Stack Internal Tooling (Build and Deployment Platform),1,claude
+sre_platform,GitLab,"Engineering Manager, Dedicated Integrations",0,claude
+sre_platform,Okta,Senior Software Engineer – Tooling & Platform (Terraform),1,claude
+sre_platform,Okta,Staff Software Engineer,0,claude
+sre_platform,Anthropic,"Staff+ Software Engineer, Capacity Engineering",1,claude
+sre_platform,Shield AI,"Staff Engineer, Digital Infrastructure (R5602)",1,claude
+sre_platform,Datadog,Developer Advocate - Service Management EMEA,0,claude
+sre_platform,Elastic,Platform Engineer - Kubernetes,1,claude
+sre_platform,GitLab,Professional Services Engineer - West,0,claude
+sre_platform,Cloudflare,"Software Engineer, Deploy at Scale",1,claude
+sre_platform,Duolingo,Platform Engineer II,1,claude
+sre_platform,Shield AI,"Senior Engineer, Full-Stack - Forge Platform, Tools (R5790)",0,claude
+sre_platform,Okta,"Staff Site Reliability Engineer, Federal (TS/SCI)",1,claude
+security_engineer,Scale AI,"Security Engineer, Product Security",1,claude
+security_engineer,Anthropic,"Security Software Engineer, Detection & Response Platform",1,claude
+security_engineer,Okta,"Staff Backend Engineer, Identity Threat Protection",0,claude
+security_engineer,Scale AI,"Product Security Engineer, Public Sector",1,claude
+security_engineer,Okta,"Senior Software Engineer, Security Engineering (Auth0)",1,claude
+security_engineer,Affirm,Staff CIAM Software Engineer,0,claude
+security_engineer,Okta,Staff Security Engineer - Federal,1,claude
+security_engineer,Roblox,Senior Detection and Response Engineer,1,claude
+security_engineer,Scale AI,"Infrastructure Security Engineer, Public Sector",1,claude
+security_engineer,Anthropic,Senior Software Security Engineer,1,claude
+security_engineer,Roblox,Senior Cloud Security Engineer,1,claude
+security_engineer,Scale AI,IT Systems Engineer,0,claude
+security_engineer,Anthropic,"Security Engineer, Detection & Response",1,claude
+security_engineer,Klaviyo,Senior Security Engineer - Detection & Response,1,claude
+security_engineer,Scale AI,"Security Engineer, Infrastructure",1,claude
+security_engineer,Shield AI,"Senior Engineer, Cybersecurity (R5972)",1,claude
+security_engineer,Samsara,"Sr. Software Engineer, Cloud Platform",0,claude
+security_engineer,Squarespace,Security Engineer - Incident Response,1,claude
+security_engineer,Cloudflare,"Senior Software Engineer, Security Rules",0,claude
+security_engineer,Cloudflare,Security Engineer (IAM),1,claude
+security_engineer,Roblox,Senior Offensive Security Engineer,1,claude
+security_engineer,Elastic,Senior Solutions Architect - Security Specialist,0,claude
+security_engineer,Shield AI,Staff DevSecOps Engineer (R5824),0,claude
+security_engineer,Cloudflare,"Software Engineer, Security Rules",0,claude
+security_engineer,Okta,Staff Software Engineer,0,claude
+security_engineer,Anthropic,"Staff Security Engineer, Detection & Response",1,claude
+security_engineer,Datadog,"Senior Services Architect, Security-Cloud SIEM",0,claude
+security_engineer,Pinterest,"Sr. Security Software Engineer, Security Operations",1,claude
+security_engineer,Elastic,Senior Solutions Architect - SIEM,0,claude
+security_engineer,Cloudflare,Senior Product Security Engineer,1,claude
+security_engineer,Cloudflare,Product Security Engineer,1,claude
+security_engineer,Nuro,"Software Engineer, Cloud Infrastructure and Observability",0,claude
+security_engineer,Shield AI,"Staff Engineer, Cybersecurity Platform (R5531)",1,claude
+security_engineer,Asana,Staff Detection Engineer,1,claude
+security_engineer,Datadog,Software Engineer with Systems Depth,0,claude
+security_engineer,Anthropic,"Security Risk & Compliance, Data Centers & Compute",0,claude
+security_engineer,Vercel,"Security Engineer, Cloud",1,claude
+security_engineer,Anthropic,Technical Recruiter,0,claude
+security_engineer,Anthropic,Security Technology Deployment Specialist,0,claude
+security_engineer,Elastic,Senior Security Research Engineer,1,claude
+security_engineer,Elastic,Senior Software Engineer - SSC,0,claude
+data_analyst,Affirm,"Analytics Engineer II, Full Stack (Revenue Analytics)",1,claude
+data_analyst,Okta,Senior Data Analyst,1,claude
+data_analyst,Discord,Strategic Finance,0,claude
+data_analyst,Lyft,"Data Analyst, Go-To-Market Sales Insights",1,claude
+data_analyst,Reddit,"Senior Business Analyst, Revenue Analytics",1,claude
+data_analyst,GitLab,Staff Data Analyst,1,claude
+data_analyst,Lyft,Data Scientist,0,claude
+data_analyst,Pinterest,Sales Finance Analyst,0,claude
+data_analyst,Anthropic,"Data Science, Finance & Strategy",0,claude
+data_analyst,Affirm,"Analyst II, Full Stack",1,claude
+data_analyst,Shield AI,Program Finance Lead (R5328),0,claude
+data_analyst,Vercel,"Software Engineer, Financial Data Platform",0,claude
+data_analyst,GitLab,"Senior Analyst, Sales Strategy",0,claude
+data_analyst,Okta,"Staff Data Analyst, People Analytics",1,claude
+data_analyst,MongoDB,Senior Data Analyst,1,claude
+data_analyst,MongoDB,Staff Analyst,1,claude
+data_analyst,Anthropic,Recruiting Analytics Data Engineer,0,claude
+data_analyst,Asana,Analytical Engineer,1,claude
+data_analyst,Okta,"Sr. Manager, Marketing Analytics",0,claude
+data_analyst,Datadog,Strategic Finance Analyst,0,claude
+data_analyst,Brex,Data Analyst II,1,claude
+data_analyst,Datadog,Senior Financial Systems Analyst,0,claude
+data_analyst,Databricks,Senior Finance Specialist (Data & AI),0,claude
+data_analyst,Samsara,Finance & Strategy AI Engineer,0,claude
+data_analyst,Airbnb,"Staff Software Engineer, Data Warehouse",0,claude
+data_analyst,Figma,"Data Scientist, Finance",0,claude
+data_analyst,Databricks,Finance Data and AI Lead,0,claude
+data_analyst,Figma,Strategic Finance,0,claude
+data_analyst,Databricks,Business Development Representative,0,claude
+data_analyst,Databricks,"Senior Manager, Finance Data and AI",0,claude
+data_analyst,Asana,Senior Analytics Engineer,1,claude
+data_analyst,Coinbase,People Analytics Intern,0,claude
+data_analyst,Okta,"Senior Data Analyst, Field Analytics",1,claude
+data_analyst,Databricks,Customer Enablement Architect,0,claude
+data_analyst,Lyft,Senior Financial Data Analyst (Manager),0,claude
+data_analyst,Lyft,"Analytics Lead, Central Market Management",1,claude
+data_analyst,MongoDB,Strategic Finance Analyst,0,claude
+data_analyst,Datadog,Sales Revenue Analyst - NYC,1,claude
+data_analyst,Toast,Lead Credit Underwriter - Retail,0,claude
+data_analyst,Pinterest,"Staff Data Scientist, Forecasting",0,claude
+data_analyst,Lyft,"Senior Data Scientist, Causal Inference",0,claude
+data_analyst,Lyft,Financial Analyst,0,claude
+data_analyst,MongoDB,Operations Business Analyst,1,claude
+data_analyst,Databricks,Strategic Account Executive - Retail vertical,0,claude
+robotics_perception,Shield AI,"Senior Staff Engineer, Computer Vision (C++) (R5197)",1,claude
+robotics_perception,Shield AI,"Staff Engineer, Computer Vision (C++) (R5196)",1,claude
+robotics_perception,Shield AI,Computer Vision Engineer (C++) (R4633),1,claude
+robotics_perception,Shield AI,"Senior Engineer, Computer Vision (C++) (R5195)",1,claude
+robotics_perception,Shield AI,Perception Software Engineer (R5911),1,claude
+robotics_perception,Waymo,"Senior Machine Learning Engineer, Robotics",1,claude
+robotics_perception,Scale AI,"Software Engineer, Robotics",1,claude
+robotics_perception,Shield AI,"Staff Engineer, State Estimation (R5783)",1,claude
+robotics_perception,Nuro,"Senior/Staff Machine Learning Engineer, Sensor Simulation",1,claude
+robotics_perception,Shield AI,"Senior Manager, Perception (R5914)",0,claude
+robotics_perception,Shield AI,"Staff Engineer, Perception (R5611)",1,claude
+robotics_perception,Nuro,"Senior/Staff Engineer, Machine Learning - Online Mapping",1,claude
+robotics_perception,Zoox,Perception Deployment Engineer - Model Deployment & Optimization,1,claude
+robotics_perception,Waymo,"Software Engineer, Vehicle Platforms C++",0,claude
+robotics_perception,Shield AI,"Staff Engineer, Integration (R6009)",0,claude
+robotics_perception,Nuro,"Senior Software Engineer, Onboard Autonomy",1,claude
+robotics_perception,Shield AI,"Staff Deep Learning Engineer, State Estimation (R5785)",1,claude
+robotics_perception,Shield AI,"Staff Software Engineer, Perception (R5421)",1,claude
+robotics_perception,Nuro,"Senior Software Engineer, Perception, Machine Learning/Computer Vision",1,claude
+robotics_perception,Waymo,"2027 Summer Intern, PhD, Machine Learning, Computer Vision",0,claude
+robotics_perception,Waymo,"Staff Machine Learning Engineer, Maneuvering Tech",1,claude
+robotics_perception,Shield AI,Software Engineer C++ (R5716),0,claude
+robotics_perception,Shield AI,"Engineer II, Autonomy (R5713)",1,claude
+robotics_perception,Waymo,"Senior Software Engineer, Vehicle Platforms C++",0,claude
+robotics_perception,Shield AI,"Senior Software Engineer, Perception (R5420)",1,claude
+robotics_perception,Waymo,"Senior Machine Learning Engineer, Maneuvering Tech",1,claude
+robotics_perception,Waymo,"Machine Learning Engineer, Maneuvering Tech",1,claude
+robotics_perception,Waymo,"2027 Summer Intern, MS/PhD, Software/ML Engineer, Simulation",0,claude
+robotics_perception,Waymo,Perception Machine Learning Engineer,1,claude
+robotics_perception,Zoox,Senior Machine Learning  Engineer - Perception 3D Segmentation,1,claude
+robotics_perception,Zoox,Senior Machine Learning Engineer - Perception,1,claude
+robotics_perception,Zoox,Software Engineer - Driving Behavior,1,claude
+robotics_perception,Zoox,Software Engineering Manager - Perception Occupancy,0,claude
+robotics_perception,Shield AI,Autonomy Engineer- Behavior and Motion Planning (R6007),1,claude
+robotics_perception,Shield AI,Senior Staff Deep Learning Engineer (R5675),1,claude
+robotics_perception,Waymo,Staff Machine Learning Engineer - Vision-Language Foundation Models,1,claude
+robotics_perception,Zoox,Senior / Staff Machine Learning Engineer - Perception Mapping,1,claude
+robotics_perception,Shield AI,State Estimation Engineer (R4783),1,claude
+robotics_perception,Shield AI,Staff Deep Learning Engineer (R5677),1,claude
+robotics_perception,Waymo,"Staff Software Engineer, Simulator Platform",1,claude
+robotics_perception,Shield AI,Software Embedded Applications Engineer (R5068),0,claude
+robotics_perception,Nuro,"Software Engineer, Offboard Infrastructure",0,claude
+robotics_perception,Zoox,Senior Software Engineer -  Mapping Web,0,claude
+robotics_perception,Shield AI,"Staff Engineer, Human Machine Interface (R6070)",0,claude
+robotics_perception,Zoox,Senior Staff Machine Learning Engineer - Perception,1,claude
+robotics_perception,Shield AI,"Senior Staff Software Engineer, Perception (R4985)",1,claude
+robotics_perception,Zoox,Senior Staff Software Engineer - Perception & Sensing,1,claude
+robotics_perception,Zoox,Software Engineer - Planner GPU Compute,1,claude
+robotics_perception,Instacart,Principal Computer Vision Engineer,0,claude
+embedded_firmware,Shield AI,Software Embedded Applications Engineer (R5068),1,claude
+embedded_firmware,Shield AI,"Senior Software Engineer, Hardware Test (R4978)",0,claude
+embedded_firmware,Shield AI,"Staff Engineer, Embedded Firmware (R5637)",1,claude
+embedded_firmware,Zoox,Embedded Software Engineer,1,claude
+embedded_firmware,Nuro,Embedded Software Engineer,1,claude
+embedded_firmware,Shield AI,Software Engineer C++ (R5716),1,claude
+embedded_firmware,Shield AI,Modeling & Simulation Engineer (R4869),0,claude
+embedded_firmware,Shield AI,"Staff Engineer, FPGA Design (R5347)",0,claude
+embedded_firmware,Shield AI,Software Test Automation Engineer (R4719),0,claude
+embedded_firmware,Zoox,Firmware Validation Engineer,0,claude
+embedded_firmware,Waymo,"Senior Software Engineer, Vehicle Platforms C++",1,claude
+embedded_firmware,Shield AI,Staff Electrical Engineer (R5988),0,claude
+embedded_firmware,Shield AI,"Senior Engineer, System Integration Test (R6086)",0,claude
+embedded_firmware,Zoox,Senior Sensor Hardware Functional Safety Engineer,0,claude
+embedded_firmware,Zoox,Embedded Software Engineer - Body Systems,1,claude
+embedded_firmware,Shield AI,"Staff Engineer, Core Platform Integration (R5411)",0,claude
+embedded_firmware,Waymo,"Software Engineer, Vehicle Platforms C++",1,claude
+embedded_firmware,Shield AI,"Senior Engineer, C++ Software (R5848)",0,claude
+embedded_firmware,Shield AI,"Staff Engineering Specialist, Avionics (R5109)",0,claude
+embedded_firmware,Shield AI,"Software Engineering Manager, Hardware Test (X-BAT) (R6020)",0,claude
+embedded_firmware,Waymo,"Senior Software Engineer, Compute Software",1,claude
+embedded_firmware,Zoox,Manufacturing Test Engineer,0,claude
+embedded_firmware,Waymo,"Senior Systems Engineer,  Vehicle Body Control Systems",0,claude
+embedded_firmware,Zoox,Embedded Software Engineer - Drive Systems,1,claude
+embedded_firmware,Shield AI,Mission Systems Software Engineer - BlueSky (R5199),0,claude
+embedded_firmware,Shield AI,Flight Test Instrumentation Engineer (R5009),0,claude
+embedded_firmware,Zoox,Staff Compute Systems Engineer,0,claude
+embedded_firmware,Shield AI,"Senior Electrical Engineer, Hardware Test (R5099)",0,claude
+embedded_firmware,Shield AI,Mission Systems Software Engineer (R5888),0,claude
+embedded_firmware,Shield AI,Safety-Critical Software Engineer (R5788),1,claude
+embedded_firmware,Samsara,Senior Software Engineer II,0,claude
+embedded_firmware,Shield AI,"Senior/Staff Engineer, C++ Software - Edge Systems (R5191)",1,claude
+embedded_firmware,Anthropic,Platform Hardware Security,0,claude
+embedded_firmware,Zoox,Senior Manufacturing Test Engineer,0,claude
+embedded_firmware,Shield AI,"Senior Manager, Software Test and Automation (R6080)",0,claude
+embedded_firmware,Zoox,Embedded Software Engineer - Battery Management Systems,1,claude
+embedded_firmware,Zoox,Senior/Staff Technical Program Manager - Compute Hardware,0,claude
+embedded_firmware,Waymo,Silicon Emulation Engineer,0,claude
+embedded_firmware,Shield AI,"Staff Engineer, Software Test (R5836)",0,claude
+embedded_firmware,Zoox,Software Engineer - Embedded Linux Operating Systems,1,claude
+embedded_firmware,Shield AI,"Senior Engineer, Test (R5833)",0,claude
+embedded_firmware,Shield AI,"Engineer II, Modelling and Simulation (R5712)",0,claude
+embedded_firmware,Shield AI,Flight Test Engineer (R5898),0,claude
+embedded_firmware,Zoox,Embedded Software Engineer - Power Systems,1,claude
+embedded_firmware,Shield AI,"Senior Electrical Engineer, Test Equipment Design",0,claude
+embedded_firmware,Zoox,Senior Software Development Engineer in Test - Verification And Validation,0,claude
+embedded_firmware,Shield AI,"Electrical Engineer, Hardware Test (R5099)",0,claude
+embedded_firmware,Shield AI,Senior Lab Technician (R5317),0,claude
+embedded_firmware,Palantir,Senior Software Engineer - Autonomous Systems,0,claude
+account_executive,Samsara,Enterprise Core Account Executive - Public Sector,1,claude
+account_executive,Toast,Enterprise Business Development Representative,0,claude
+account_executive,MongoDB,"Enterprise Account Executive, Acquisition",1,claude
+account_executive,MongoDB,"Senior Enterprise Account Executive, Growth",1,claude
+account_executive,Datadog,Mid Market Account Executive - Benelux,1,claude
+account_executive,Datadog,Mid-Market Account Executive - Boston,1,claude
+account_executive,MongoDB,"Enterprise Account Executive, Growth",1,claude
+account_executive,Datadog,Mid-Market Account Executive (DACH),1,claude
+account_executive,MongoDB,Inside Account Executive,1,claude
+account_executive,Datadog,Mid Market Account Executive (Italy),1,claude
+account_executive,Datadog,Commercial Account Executive (Benelux),1,claude
+account_executive,MongoDB,Enterprise Account Executive (Cyber),1,claude
+account_executive,Elastic,Mid Market Account Executive - Japan,1,claude
+account_executive,Shield AI,"Senior Staff BD Account Executive, Autonomy Specialist (R5123)",1,claude
+account_executive,Datadog,"Manager, Commercial Sales",0,claude
+account_executive,Datadog,Enterprise Account Executive (UKI) - Public Sector,1,claude
+account_executive,Datadog,Commercial Account Executive,1,claude
+account_executive,MongoDB,Enterprise Account Executive,1,claude
+account_executive,Elastic,Enterprise Account Executive - West,1,claude
+account_executive,Elastic,Enterprise Account Executive - CA,1,claude
+account_executive,Elastic,"Emerging Enterprise Account Executive, West",1,claude
+account_executive,Cloudflare,"Business Development Representative, Bengaluru",0,claude
+account_executive,Elastic,Enterprise Account Executive - East,1,claude
+account_executive,GitLab,Commercial Account Executive - DACH,1,claude
+account_executive,Datadog,Commercial Account Executive (Hong Kong Market),1,claude
+account_executive,Datadog,Strategic Account Executive (UKI) - Public Sector,1,claude
+account_executive,Datadog,Enterprise Account Executive - UKI,1,claude
+account_executive,Datadog,"Director, Enterprise Sales",0,claude
+account_executive,Datadog,Regional Director - Enterprise Sales,0,claude
+account_executive,Elastic,Enterprise Account Executive - North Central,1,claude
+account_executive,Okta,Corporate New Business Account Executive,1,claude
+account_executive,Databricks,"Sr. Director, Enterprise - Retail Vertical - Strategic Accounts",0,claude
+account_executive,Figma,"Account Executive, Enterprise (Tokyo, Japan)",1,claude
+account_executive,Figma,"Account Executive, Enterprise (Bengaluru, India)",1,claude
+account_executive,Datadog,Strategic Account Executive (DACH),1,claude
+product_designer,Roblox,"[2027] Associate Product Designer, Early Career",0,claude
+product_designer,Chime,"Visual Designer, Web",0,claude
+product_designer,Roblox,[Summer 2027] Product Design Intern,0,claude
+product_designer,Figma,"Early Career, Product Designer (2027)",0,claude
+product_designer,Figma,Designer Advocate,0,claude
+product_designer,Figma,"Product Designer, Growth & Monetization",1,claude
+product_designer,Figma,"Content Strategist, Product",0,claude
+product_designer,Asana,Product Designer,1,claude
+product_designer,Palantir,Product Designer - US Government,1,claude
+product_designer,Reddit,"Staff Product Designer, Presence",1,claude
+product_designer,Figma,"Designer Advocate, Partnerships",0,claude
+product_designer,Figma,"Solutions Consultant (Berlin, Germany)",0,claude
+product_designer,Duolingo,Staff Product Researcher,0,claude
+product_designer,Figma,"Product Designer, Design, Dev, & AI Tools",1,claude
+product_designer,Figma,"Product Designer, Design Systems",1,claude
+product_designer,Figma,Software Engineer - Full Stack,0,claude
+product_designer,Figma,"Product Designer, CMS",1,claude
+product_designer,Figma,"Product Designer, Roundtripping (London, United Kingdom)",1,claude
+product_designer,Palantir,"Product Designer, New Grad - US Government",0,claude
+product_designer,Figma,Product Design Intern (2027),0,claude
+product_designer,Figma,Software Engineer - Growth & Monetization,0,claude
+product_designer,Figma,"Solutions Consultant (London, United Kingdom)",0,claude
+product_designer,Figma,Solutions Consultant,0,claude
+product_designer,Pinterest,"Sr. Software Engineer, Web",0,claude
+product_designer,Discord,"Senior Product Designer, Consumer Revenue",1,claude
+product_designer,Figma,Software Engineer - Mobile Web,0,claude
+product_designer,Duolingo,"Associate Product Manager, Intern",0,claude
+product_designer,Palantir,"Product Designer, Internship - US Government",0,claude
+product_designer,Reddit,"Senior Software Engineer, Consumer Engineering",0,claude
+product_designer,Figma,"Solutions Consultant (Sydney, Australia)",0,claude
+product_designer,Chime,"Principal Product Designer, Lending",0,claude
+product_designer,Robinhood,Web Engineer,0,claude
+product_designer,Reddit,"Software Engineer, Consumer Engineering",0,claude
+product_designer,Reddit,"Principal UX Engineer, Ads",0,claude
+product_designer,Scale AI,"Product Designer, Global Public Sector",1,claude
+product_designer,Shield AI,Staff UI Designer (R6055),1,claude
+product_designer,Reddit,"Staff Software Engineer, Consumer Engineering",0,claude
+product_designer,Robinhood,"Senior Product Designer, Trading",1,claude
+product_designer,Figma,"Brand Designer,  Product Launches",0,claude
+product_designer,Samsara,Staff Product Design Engineer,0,claude
+product_designer,Figma,"Software Engineer - AI Product (London, United Kingdom)",0,claude
+product_designer,Figma,"Product Manager, Acquisition",0,claude
+product_designer,Affirm,Visual Designer II,0,claude
+product_designer,Reddit,"Front End Software Engineer, Consumer Engineering",0,claude
+product_designer,Datadog,"Senior Staff Visual Designer, Design Lab",0,claude

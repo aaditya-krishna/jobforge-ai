@@ -24,6 +24,14 @@ def test_resume_without_skills():
     assert r["coverage"] == 0.0 and r["missing"] == ["Go", "Python"]
 
 
+def test_prior_smooths_small_skill_sets():
+    one_of_one = score(0.5, {"Python"}, {"Python"}, w_sem=0.0, prior=3)
+    nine_of_ten = score(0.5, set("abcdefghi"), set("abcdefghij"), w_sem=0.0, prior=3)
+    assert one_of_one["score"] == pytest.approx(0.25) and nine_of_ten["score"] == pytest.approx(9 / 13)
+    assert nine_of_ten["score"] > one_of_one["score"]  # without the prior, 1/1 (100%) beats 9/10 (90%)
+    assert one_of_one["coverage"] == 1.0  # displayed coverage stays the raw share
+
+
 @pytest.mark.parametrize("w_sem, expected", [(1.0, 0.4), (0.0, 1.0)])
 def test_weight_extremes(w_sem, expected):
     assert score(0.4, {"Python"}, {"Python"}, w_sem=w_sem)["score"] == pytest.approx(expected)

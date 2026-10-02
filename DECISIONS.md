@@ -67,3 +67,14 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **Paste-text box besides PDF upload**: handy for users and lets `AppTest` drive the full flow in tests.
 - **`DEFAULT_W_SEM` constant shared by the app, CLI and scoring**: Phase 8 tuning changes one line.
 - **Seniority mismatch (interns ranking for experienced resumes) logged, not fixed**: needs measurement first; noted as a known limitation.
+
+## Phase 8: Evaluation
+- **Claude labeled the 518 pooled roles under written criteria (`data/eval/LABELING.md`), recorded as `labeler=claude`**: no human labels were available and the user asked to continue without stopping; README states the labels are unreviewed.
+- **Label every role in each resume's top-50 semantic pool**: every config re-ranks the same fully labeled set, so no ranked result is unjudged and no config is favored by what got labeled.
+- **Labels keyed by (resume, company, title), not posting id**: the same role in several cities collapses to one result and should share one judgment.
+- **Level rules in the criteria (no interns/new-grad/managers/distinguished for 3–7 year resumes)**: makes the seniority-mismatch limitation visible in the metrics.
+- **Added smoothed coverage (`matched / (n + prior)`) and KeyBERT-in-coverage configs to the guide's list**: tests the "1-of-1 = 100%" weakness found in Phase 5.
+- **"+ KeyBERT" tied exactly with prior 5 (0.817 / 0.808), so its gain is denominator smoothing, not better skills**: chose explicit smoothing, which is simpler and explainable.
+- **New defaults: w_sem = 0.7, prior = 5 (`DEFAULT_W_SEM`, `DEFAULT_PRIOR` in match.py)**: best P@5 and P@10 in `data/eval/results.md`. Caveat: tuned and reported on the same 12 resumes, no held-out set.
+- **Displayed coverage stays the raw share; smoothing only affects the score**: keeps the percentage consistent with the matched/missing lists users see.
+- **`to_label.csv` gitignored**: regenerable worksheet that contains posting excerpts.

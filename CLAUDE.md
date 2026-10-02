@@ -18,7 +18,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 5: Matching and ranking
 - [ ] Phase 6: LLM explanations (RAG): built and tested with a fake LLM; needs an API key in `.env` for a live run
 - [x] Phase 7: Streamlit app
-- [ ] Phase 8: Evaluation
+- [x] Phase 8: Evaluation
 - [ ] Phase 9: Packaging and polish
 
 Update these checkboxes as phases are completed. Don't start a later phase until the current one meets its "Done when" criteria in `LEARNING_GUIDE.md`.
@@ -98,7 +98,8 @@ python scripts/extract_skills.py            # new jobs only; --rebuild after edi
 python scripts/index_jobs.py                # embeds jobs missing a vector, builds HNSW index
 python scripts/search.py "ml engineer recommendations"   # ad-hoc semantic search
 python scripts/match_resume.py path/to/resume.pdf          # also .txt / .md; --w-sem, --top-n
-python scripts/evaluate.py
+python scripts/eval_pool.py                 # lists pooled roles still needing labels
+python scripts/evaluate.py                  # writes data/eval/results.md
 
 # app and tests
 streamlit run app/streamlit_app.py
@@ -154,6 +155,6 @@ Run `pytest` before considering any phase done.
 - Coverage is noisy for jobs with only a few extracted skills (one matched skill out of one gives 100%).
 - `posted_at` comes from the board's first-published date; some evergreen postings date back years, so it is not a reliable freshness signal.
 - The skills vocabulary is hand-built and focused on tech roles.
-- Evaluation set is small and hand-labeled.
+- Evaluation set is small (12 synthetic resumes) and labeled by Claude, not by a person; weights were tuned on the same set they're reported on.
 
 Add to this list as new limitations are discovered, and keep it mirrored in the README.
