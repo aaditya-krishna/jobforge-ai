@@ -29,3 +29,13 @@ CREATE TABLE IF NOT EXISTS job_embeddings (
     model      TEXT NOT NULL,
     embedding  vector(384) NOT NULL  -- must match EMBEDDING_MODEL's dimension
 );
+
+-- Cache of LLM match explanations, so a resume/job pair is never paid for twice
+CREATE TABLE IF NOT EXISTS explanations (
+    resume_hash  TEXT NOT NULL,
+    job_id       INT REFERENCES jobs(id) ON DELETE CASCADE,
+    model        TEXT NOT NULL,
+    explanation  TEXT NOT NULL,
+    created_at   TIMESTAMPTZ DEFAULT now(),
+    PRIMARY KEY (resume_hash, job_id, model)
+);

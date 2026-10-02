@@ -16,7 +16,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
 - [x] Phase 4: Embeddings and pgvector search
 - [x] Phase 5: Matching and ranking
-- [ ] Phase 6: LLM explanations (RAG)
+- [ ] Phase 6: LLM explanations (RAG): built and tested with a fake LLM; needs an API key in `.env` for a live run
 - [ ] Phase 7: Streamlit app
 - [ ] Phase 8: Evaluation
 - [ ] Phase 9: Packaging and polish

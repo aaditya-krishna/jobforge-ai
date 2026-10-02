@@ -49,3 +49,12 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **Retrieve 50 candidates, return top 10** (guide defaults).
 - **12 synthetic resumes in `data/eval/resumes/`, each labeled as fictional**: no real resumes are available; they cover 10 technical and 2 non-technical role families.
 - **PDF test builds a minimal PDF in code**: avoids adding a PDF-writing dependency just for tests.
+
+## Phase 6: LLM explanations
+- **Every match gets a deterministic template explanation; the LLM replaces it for the top 5 when configured**: the app always explains a match, and works with no API key.
+- **Grounding enforced in code: the PhraseMatcher scans LLM output; any skill outside matched/missing (title and company exempt) triggers one regeneration, then the template**: the prompt asks for grounding, but only a check guarantees it.
+- **Any LLM error (timeout, auth, rate limit) degrades to the template**: per the CLAUDE.md rule that external failures shouldn't crash the app.
+- **Cache table `explanations(resume_hash, job_id, model)`; sha256 of whitespace-normalized resume text**: a resume/job pair is never paid for twice, and changing the model doesn't serve stale text.
+- **Prompt gets 1,500-char excerpts plus the skill lists, temperature 0.2, 30s timeout, 1 retry**: the guide's cost advice; low temperature for factual summaries.
+- **Provider and model stay config-only (`LLM_PROVIDER`, `LLM_MODEL`), no default model**: no key was provided, so nothing is hardcoded and a live run is left to the user.
+- **Continued past Phase 6 without a live LLM run**: the user asked to keep going unless a secret is needed; everything except the live call is built and tested with a fake model, and the gap is recorded in PROGRESS.md.

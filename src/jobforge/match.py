@@ -23,6 +23,11 @@ def retrieve(conn: psycopg.Connection, query_vec: np.ndarray, k: int = 50) -> li
     return [dict(zip(cols, r)) for r in rows]
 
 
+def load_descriptions(conn: psycopg.Connection, job_ids: list[int]) -> dict[int, str]:
+    rows = conn.execute("SELECT id, description FROM jobs WHERE id = ANY(%s)", (job_ids,)).fetchall()
+    return dict(rows)
+
+
 def load_job_skills(conn: psycopg.Connection, job_ids: list[int],
                     methods: tuple[str, ...] = ("phrase_match",)) -> dict[int, set[str]]:
     """Skills per job. Coverage uses phrase_match only by default; KeyBERT rows are opt-in."""
