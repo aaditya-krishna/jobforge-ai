@@ -19,7 +19,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [ ] Phase 6: LLM explanations (RAG): built and tested with a fake LLM; needs an API key in `.env` for a live run
 - [x] Phase 7: Streamlit app
 - [x] Phase 8: Evaluation
-- [ ] Phase 9: Packaging and polish
+- [x] Phase 9: Packaging and polish
 
 Update these checkboxes as phases are completed. Don't start a later phase until the current one meets its "Done when" criteria in `LEARNING_GUIDE.md`.
 

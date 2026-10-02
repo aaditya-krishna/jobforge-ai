@@ -78,3 +78,13 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **New defaults: w_sem = 0.7, prior = 5 (`DEFAULT_W_SEM`, `DEFAULT_PRIOR` in match.py)**: best P@5 and P@10 in `data/eval/results.md`. Caveat: tuned and reported on the same 12 resumes, no held-out set.
 - **Displayed coverage stays the raw share; smoothing only affects the score**: keeps the percentage consistent with the matched/missing lists users see.
 - **`to_label.csv` gitignored**: regenerable worksheet that contains posting excerpts.
+
+## Phase 9: Packaging
+- **CPU-only torch from PyTorch's CPU index in the Dockerfile**: the default Linux wheel pulls ~2.5 GB of CUDA libraries the app never uses.
+- **spaCy and MiniLM models downloaded at build time**: the first request doesn't stall on a download, and the container works offline.
+- **App container runs `init_db.py` before Streamlit, waits for the DB healthcheck**: a fresh `docker compose up` needs no manual schema step.
+- **`./data` mounted into the app container; pipeline runs via `docker compose run --rm app ...`**: fetched postings persist on the host, and no local Python is needed.
+- **`DB_PORT` / `APP_PORT` overrides**: avoids clashes (like the native Postgres on 5432) and let the fresh-clone check run beside the working stack.
+- **KeyBERT `min_df` drops to 2 below 1,000 documents, and is skipped if still invalid**: a one-board test fetch crashed scikit-learn's `min_df > max_df` check.
+- **Top-level pins only in requirements.txt, no lock file**: a `pip freeze` from Windows would pin platform-specific packages that break the Linux image.
+- **Quickstart verified from a fresh clone in a separate compose project, then that project was removed**: the guide's "done when", without touching the working database.
