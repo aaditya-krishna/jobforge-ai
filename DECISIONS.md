@@ -32,3 +32,11 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **KeyBERT stored as `method='keybert'`, not used for coverage**: its phrases are noisy and would inflate every job's "missing" list; kept for vocabulary discovery and an ablation in Phase 8.
 - **KeyBERT candidates filtered once at corpus level (noun phrases, min_df 10, max_df 0.3, no generic words, not already in vocab), then company names per posting, MMR diversity 0.5**: removes most noise and embeds each candidate once instead of per document.
 - **Only the spaCy tokenizer runs for PhraseMatcher**: matching needs no tagger/parser; the full corpus takes ~30s.
+
+## Phase 4: Embeddings and vector search
+- **Embed `title + "\n" + description`** (the guide's recommendation): the title alone loses detail, and cleaned descriptions put the role first.
+- **Skip jobs already embedded with the current model; upsert on model change**: reruns are free and switching models needs no manual cleanup.
+- **Stop if the model's dimension differs from the `vector(384)` column**: fails loudly instead of with an opaque insert error.
+- **HNSW index built after loading, default parameters (m=16, ef_construction=64)**: one bulk build is faster than incremental inserts; defaults are fine at ~10k rows.
+- **Retrieval sets `hnsw.ef_search` to max(200, k)**: HNSW returns at most ef_search rows (default 40), which would silently cut a 50-candidate retrieval short.
+- **`set_config(..., true)` instead of `SET LOCAL`**: `SET` can't take bind parameters; set_config can, and is transaction-scoped.

@@ -14,7 +14,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 1: Collecting job postings (Greenhouse / Lever APIs, public datasets)
 - [x] Phase 2: Cleaning data and database schema
 - [x] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
-- [ ] Phase 4: Embeddings and pgvector search
+- [x] Phase 4: Embeddings and pgvector search
 - [ ] Phase 5: Matching and ranking
 - [ ] Phase 6: LLM explanations (RAG)
 - [ ] Phase 7: Streamlit app
@@ -95,7 +95,8 @@ python scripts/fetch_jobs.py                # boards listed in data/companies.cs
 python scripts/fetch_jobs.py --only stripe  # a single board
 python scripts/load_jobs.py                 # clean + insert; strips per-company boilerplate
 python scripts/extract_skills.py            # new jobs only; --rebuild after editing skills.csv
-python scripts/index_jobs.py
+python scripts/index_jobs.py                # embeds jobs missing a vector, builds HNSW index
+python scripts/search.py "ml engineer recommendations"   # ad-hoc semantic search
 python scripts/match_resume.py path/to/resume.pdf
 python scripts/evaluate.py
 
