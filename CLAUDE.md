@@ -12,7 +12,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 
 - [x] Phase 0: Setup (repo, venv, Postgres + pgvector via Docker)
 - [x] Phase 1: Collecting job postings (Greenhouse / Lever APIs, public datasets)
-- [ ] Phase 2: Cleaning data and database schema
+- [x] Phase 2: Cleaning data and database schema
 - [ ] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
 - [ ] Phase 4: Embeddings and pgvector search
 - [ ] Phase 5: Matching and ranking
@@ -87,12 +87,12 @@ python -m spacy download en_core_web_sm
 # database (Docker maps host port 5433; a native PostgreSQL 18 owns 5432.
 # Use 127.0.0.1, not localhost: localhost resolves to ::1 first and hangs)
 docker compose up -d db
-psql "$DATABASE_URL" -f sql/schema.sql
+python scripts/init_db.py      # applies sql/schema.sql; safe to rerun
 
 # pipeline
 python scripts/fetch_jobs.py                # boards listed in data/companies.csv
 python scripts/fetch_jobs.py --only stripe  # a single board
-python scripts/load_jobs.py
+python scripts/load_jobs.py                 # clean + insert; strips per-company boilerplate
 python scripts/extract_skills.py
 python scripts/index_jobs.py
 python scripts/match_resume.py path/to/resume.pdf
@@ -145,7 +145,8 @@ Run `pytest` before considering any phase done.
 
 ## Known limitations
 
-- Long job descriptions are truncated by the embedding model's input limit. Postings have a median of ~880 words, while all-MiniLM-L6-v2 reads about the first 200, so boilerplate at the top of a posting crowds out the requirements.
+- Long job descriptions are truncated by the embedding model's input limit. Postings have a median of ~880 words, while all-MiniLM-L6-v2 reads about the first 200. Boilerplate removal in `clean.py` (Greenhouse intro/conclusion divs plus paragraphs repeated in ≥50% of a company's postings) cuts the median to ~560 words, but most postings are still truncated.
+- `load_jobs.py` uses `ON CONFLICT DO NOTHING`, so edits to an already-loaded posting are not picked up, and postings removed from a board are never deleted.
 - About half of the fetched postings are non-technical (sales, recruiting, ops), which the tech-focused skills vocabulary covers poorly.
 - `posted_at` comes from the board's first-published date; some evergreen postings date back years, so it is not a reliable freshness signal.
 - The skills vocabulary is hand-built and focused on tech roles.
