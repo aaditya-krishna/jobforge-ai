@@ -40,3 +40,12 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **HNSW index built after loading, default parameters (m=16, ef_construction=64)**: one bulk build is faster than incremental inserts; defaults are fine at ~10k rows.
 - **Retrieval sets `hnsw.ef_search` to max(200, k)**: HNSW returns at most ef_search rows (default 40), which would silently cut a 50-candidate retrieval short.
 - **`set_config(..., true)` instead of `SET LOCAL`**: `SET` can't take bind parameters; set_config can, and is transaction-scoped.
+
+## Phase 5: Matching and ranking
+- **Resume embedded as the normalized mean of overlapping 180-word chunks**: the model reads only ~200 words, and a resume's skills are spread across all of it.
+- **Guide's hybrid score as-is: `0.7 * semantic + 0.3 * coverage`, coverage = matched / job skills (0 if the job has none)**: the starting point; weights and a smoothed coverage are compared in Phase 8.
+- **Coverage uses `phrase_match` skills only**: KeyBERT phrases would rarely appear in a resume and would just pad every job's missing list.
+- **Same company + title collapses to the best-scoring copy, other locations kept**: many roles are posted once per city and would otherwise fill the top 10.
+- **Retrieve 50 candidates, return top 10** (guide defaults).
+- **12 synthetic resumes in `data/eval/resumes/`, each labeled as fictional**: no real resumes are available; they cover 10 technical and 2 non-technical role families.
+- **PDF test builds a minimal PDF in code**: avoids adding a PDF-writing dependency just for tests.

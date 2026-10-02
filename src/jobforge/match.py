@@ -57,8 +57,34 @@ def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem:
 
 def rank(candidates: list[dict], job_skills: dict[int, set[str]], resume_skills: set[str],
          w_sem: float = 0.7, top_n: int = 10) -> list[dict]:
-    """Re-rank retrieved candidates by the hybrid score. Ties break on job_id for stable output."""
+    """Re-rank retrieved candidates by the hybrid score. Ties break on job_id for stable output.
+
+    The same role is often posted once per location; those collapse into the best-scoring copy
+    so duplicates don't crowd out other jobs. Other copies' locations are kept in `other_locations`.
+    """
     scored = [{**c, **score(c["similarity"], resume_skills, job_skills.get(c["job_id"], set()), w_sem)}
               for c in candidates]
     scored.sort(key=lambda r: (-r["score"], r["job_id"]))
-    return scored[:top_n]
+    unique: dict[tuple, dict] = {}
+    for r in scored:
+        key = ((r.get("company") or "").lower(), (r.get("title") or "").lower())
+        if key[1] and key in unique:
+            if r.get("location"):
+                unique[key]["other_locations"].append(r["location"])
+            continue
+        unique[key if key[1] else ("", str(r["job_id"]))] = {**r, "other_locations": []}
+    return list(unique.values())[:top_n]
+
+
+def match_resume(conn: psycopg.Connection, resume_text: str, extractor, k: int = 50, top_n: int = 10,
+                 w_sem: float = 0.7, methods: tuple[str, ...] = ("phrase_match",)) -> tuple[set[str], list[dict]]:
+    """Full online flow: embed + extract skills from the resume, retrieve k candidates, re-rank.
+
+    Returns (resume_skills, ranked results).
+    """
+    from jobforge.embed import embed_long  # imported here so pure scoring tests don't load the model
+
+    resume_skills = extractor.extract(resume_text)
+    candidates = retrieve(conn, embed_long(resume_text), k)
+    skills = load_job_skills(conn, [c["job_id"] for c in candidates], methods)
+    return resume_skills, rank(candidates, skills, resume_skills, w_sem, top_n)

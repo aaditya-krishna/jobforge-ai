@@ -15,7 +15,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 2: Cleaning data and database schema
 - [x] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
 - [x] Phase 4: Embeddings and pgvector search
-- [ ] Phase 5: Matching and ranking
+- [x] Phase 5: Matching and ranking
 - [ ] Phase 6: LLM explanations (RAG)
 - [ ] Phase 7: Streamlit app
 - [ ] Phase 8: Evaluation
@@ -97,7 +97,7 @@ python scripts/load_jobs.py                 # clean + insert; strips per-company
 python scripts/extract_skills.py            # new jobs only; --rebuild after editing skills.csv
 python scripts/index_jobs.py                # embeds jobs missing a vector, builds HNSW index
 python scripts/search.py "ml engineer recommendations"   # ad-hoc semantic search
-python scripts/match_resume.py path/to/resume.pdf
+python scripts/match_resume.py path/to/resume.pdf          # also .txt / .md; --w-sem, --top-n
 python scripts/evaluate.py
 
 # app and tests
