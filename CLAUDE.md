@@ -13,7 +13,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 0: Setup (repo, venv, Postgres + pgvector via Docker)
 - [x] Phase 1: Collecting job postings (Greenhouse / Lever APIs, public datasets)
 - [x] Phase 2: Cleaning data and database schema
-- [ ] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
+- [x] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
 - [ ] Phase 4: Embeddings and pgvector search
 - [ ] Phase 5: Matching and ranking
 - [ ] Phase 6: LLM explanations (RAG)
@@ -56,7 +56,8 @@ Do not add new dependencies without asking first. When adding one, pin its versi
 ```
 data/raw/            untouched downloads (gitignored)
 data/processed/      cleaned files (gitignored)
-data/skills.csv      skills vocabulary: skill,aliases
+data/skills.csv      skills vocabulary: skill,aliases(|-separated),match(""|case|strict)
+data/companies.csv   job boards to fetch: source,board,company
 data/eval/           labeled resume-job pairs for evaluation
 sql/schema.sql       database schema
 src/jobforge/        package code
@@ -93,7 +94,7 @@ python scripts/init_db.py      # applies sql/schema.sql; safe to rerun
 python scripts/fetch_jobs.py                # boards listed in data/companies.csv
 python scripts/fetch_jobs.py --only stripe  # a single board
 python scripts/load_jobs.py                 # clean + insert; strips per-company boilerplate
-python scripts/extract_skills.py
+python scripts/extract_skills.py            # new jobs only; --rebuild after editing skills.csv
 python scripts/index_jobs.py
 python scripts/match_resume.py path/to/resume.pdf
 python scripts/evaluate.py
@@ -108,7 +109,7 @@ Update this section when scripts are added or renamed.
 ## Database schema
 
 - `jobs(id, source, external_id, title, company, location, description, url, posted_at, created_at)` with `UNIQUE (source, external_id)`
-- `job_skills(job_id, skill, method)` where `method` is `phrase_match` or `keybert`
+- `job_skills(job_id, skill, method)` where `method` is `phrase_match` or `keybert`. Matching and coverage use `phrase_match` only; `keybert` rows are noisier free-text keywords kept for vocabulary discovery and ablation.
 - `job_embeddings(job_id, model, embedding vector(384))` with an HNSW index using `vector_cosine_ops`
 
 The `vector(384)` dimension must match `EMBEDDING_MODEL`. Changing the model means altering the column and re-embedding every job.
