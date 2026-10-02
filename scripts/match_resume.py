@@ -10,7 +10,7 @@ import textwrap
 from jobforge.config import get_settings
 from jobforge.db import connect
 from jobforge.explain import DbCache, explain_matches, make_llm
-from jobforge.match import load_descriptions, match_resume
+from jobforge.match import DEFAULT_W_SEM, load_descriptions, match_resume
 from jobforge.resume import load_resume
 from jobforge.skills import SkillExtractor, load_vocab
 
@@ -18,7 +18,8 @@ from jobforge.skills import SkillExtractor, load_vocab
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("resume")
-    parser.add_argument("--w-sem", type=float, default=0.7, help="weight of semantic similarity (default 0.7)")
+    parser.add_argument("--w-sem", type=float, default=DEFAULT_W_SEM,
+                        help=f"weight of semantic similarity (default {DEFAULT_W_SEM})")
     parser.add_argument("--top-n", type=int, default=10)
     args = parser.parse_args()
 

@@ -5,20 +5,29 @@ import psycopg
 
 # HNSW returns at most ef_search rows (default 40), so it must be at least the candidate count
 EF_SEARCH = 200
+DEFAULT_W_SEM = 0.7
 
 RETRIEVE_SQL = """
     SELECT j.id, j.title, j.company, j.location, j.url, 1 - (e.embedding <=> %(q)s) AS similarity
     FROM job_embeddings e
     JOIN jobs j ON j.id = e.job_id
+    WHERE %(location)s::text IS NULL OR j.location ILIKE '%%' || %(location)s || '%%'
     ORDER BY e.embedding <=> %(q)s
     LIMIT %(k)s
 """
 
 
-def retrieve(conn: psycopg.Connection, query_vec: np.ndarray, k: int = 50) -> list[dict]:
-    """Top-k jobs by cosine similarity. `<=>` is cosine distance, so similarity = 1 - distance."""
+def retrieve(conn: psycopg.Connection, query_vec: np.ndarray, k: int = 50,
+             location: str | None = None) -> list[dict]:
+    """Top-k jobs by cosine similarity, optionally only where location contains `location`.
+
+    `<=>` is cosine distance, so similarity = 1 - distance. With a filter, iterative index scans
+    (pgvector 0.8) keep walking the HNSW graph until k rows pass it, instead of returning fewer.
+    """
     conn.execute("SELECT set_config('hnsw.ef_search', %s, true)", (str(max(EF_SEARCH, k)),))
-    rows = conn.execute(RETRIEVE_SQL, {"q": query_vec, "k": k}).fetchall()
+    conn.execute("SELECT set_config('hnsw.iterative_scan', 'relaxed_order', true)")
+    params = {"q": query_vec, "k": k, "location": (location or "").strip() or None}
+    rows = conn.execute(RETRIEVE_SQL, params).fetchall()
     cols = ("job_id", "title", "company", "location", "url", "similarity")
     return [dict(zip(cols, r)) for r in rows]
 
@@ -43,7 +52,7 @@ def load_job_skills(conn: psycopg.Connection, job_ids: list[int],
 
 # --- Pure scoring (no database) -----------------------------------------------------------
 
-def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem: float = 0.7) -> dict:
+def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem: float = DEFAULT_W_SEM) -> dict:
     """Hybrid score: w_sem * semantic similarity + (1 - w_sem) * skill coverage.
 
     Coverage = share of the job's skills the resume has. A job with no extracted skills gets
@@ -61,7 +70,7 @@ def score(semantic: float, resume_skills: set[str], job_skills: set[str], w_sem:
 
 
 def rank(candidates: list[dict], job_skills: dict[int, set[str]], resume_skills: set[str],
-         w_sem: float = 0.7, top_n: int = 10) -> list[dict]:
+         w_sem: float = DEFAULT_W_SEM, top_n: int = 10) -> list[dict]:
     """Re-rank retrieved candidates by the hybrid score. Ties break on job_id for stable output.
 
     The same role is often posted once per location; those collapse into the best-scoring copy
@@ -82,7 +91,8 @@ def rank(candidates: list[dict], job_skills: dict[int, set[str]], resume_skills:
 
 
 def match_resume(conn: psycopg.Connection, resume_text: str, extractor, k: int = 50, top_n: int = 10,
-                 w_sem: float = 0.7, methods: tuple[str, ...] = ("phrase_match",)) -> tuple[set[str], list[dict]]:
+                 w_sem: float = DEFAULT_W_SEM, methods: tuple[str, ...] = ("phrase_match",),
+                 location: str | None = None) -> tuple[set[str], list[dict]]:
     """Full online flow: embed + extract skills from the resume, retrieve k candidates, re-rank.
 
     Returns (resume_skills, ranked results).
@@ -90,6 +100,6 @@ def match_resume(conn: psycopg.Connection, resume_text: str, extractor, k: int =
     from jobforge.embed import embed_long  # imported here so pure scoring tests don't load the model
 
     resume_skills = extractor.extract(resume_text)
-    candidates = retrieve(conn, embed_long(resume_text), k)
+    candidates = retrieve(conn, embed_long(resume_text), k, location)
     skills = load_job_skills(conn, [c["job_id"] for c in candidates], methods)
     return resume_skills, rank(candidates, skills, resume_skills, w_sem, top_n)

@@ -58,3 +58,12 @@ One line per decision, with the reason. Newest phase at the bottom.
 - **Prompt gets 1,500-char excerpts plus the skill lists, temperature 0.2, 30s timeout, 1 retry**: the guide's cost advice; low temperature for factual summaries.
 - **Provider and model stay config-only (`LLM_PROVIDER`, `LLM_MODEL`), no default model**: no key was provided, so nothing is hardcoded and a live run is left to the user.
 - **Continued past Phase 6 without a live LLM run**: the user asked to keep going unless a secret is needed; everything except the live call is built and tested with a fake model, and the gap is recorded in PROGRESS.md.
+
+## Phase 7: Streamlit app
+- **Location filter inside the SQL query, with pgvector 0.8 `hnsw.iterative_scan = relaxed_order`**: post-filtering a top-50 could return nothing; iterative scans keep walking the index until 50 rows pass (verified: "Dublin" still yields 50).
+- **Minimum score filter applied after ranking**: the score only exists after re-ranking.
+- **Models and the LLM client cached with `@st.cache_resource`, loaded on first match**: the page opens instantly; later matches skip model loading.
+- **New DB connection per match instead of a pool**: one query burst per click; avoids adding psycopg_pool.
+- **Paste-text box besides PDF upload**: handy for users and lets `AppTest` drive the full flow in tests.
+- **`DEFAULT_W_SEM` constant shared by the app, CLI and scoring**: Phase 8 tuning changes one line.
+- **Seniority mismatch (interns ranking for experienced resumes) logged, not fixed**: needs measurement first; noted as a known limitation.

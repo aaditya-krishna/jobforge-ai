@@ -17,7 +17,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 - [x] Phase 4: Embeddings and pgvector search
 - [x] Phase 5: Matching and ranking
 - [ ] Phase 6: LLM explanations (RAG): built and tested with a fake LLM; needs an API key in `.env` for a live run
-- [ ] Phase 7: Streamlit app
+- [x] Phase 7: Streamlit app
 - [ ] Phase 8: Evaluation
 - [ ] Phase 9: Packaging and polish
 
@@ -150,6 +150,8 @@ Run `pytest` before considering any phase done.
 - Long job descriptions are truncated by the embedding model's input limit. Postings have a median of ~880 words, while all-MiniLM-L6-v2 reads about the first 200. Boilerplate removal in `clean.py` (Greenhouse intro/conclusion divs plus paragraphs repeated in ≥50% of a company's postings) cuts the median to ~560 words, but most postings are still truncated.
 - `load_jobs.py` uses `ON CONFLICT DO NOTHING`, so edits to an already-loaded posting are not picked up, and postings removed from a board are never deleted.
 - About half of the fetched postings are non-technical (sales, recruiting, ops), which the tech-focused skills vocabulary covers poorly.
+- Seniority isn't modeled: intern and staff postings for the same role family can rank side by side, because neither embeddings nor skill coverage capture level.
+- Coverage is noisy for jobs with only a few extracted skills (one matched skill out of one gives 100%).
 - `posted_at` comes from the board's first-published date; some evergreen postings date back years, so it is not a reliable freshness signal.
 - The skills vocabulary is hand-built and focused on tech roles.
 - Evaluation set is small and hand-labeled.
