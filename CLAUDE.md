@@ -11,7 +11,7 @@ The full build plan, concepts, and phase-by-phase steps live in `LEARNING_GUIDE.
 ## Current status
 
 - [x] Phase 0: Setup (repo, venv, Postgres + pgvector via Docker)
-- [ ] Phase 1: Collecting job postings (Greenhouse / Lever APIs, public datasets)
+- [x] Phase 1: Collecting job postings (Greenhouse / Lever APIs, public datasets)
 - [ ] Phase 2: Cleaning data and database schema
 - [ ] Phase 3: Skill extraction (spaCy PhraseMatcher + KeyBERT)
 - [ ] Phase 4: Embeddings and pgvector search
@@ -81,6 +81,7 @@ tests/               pytest tests
 py -3.12 -m venv .venv          # project uses Python 3.12
 .venv\Scripts\activate          # Windows (macOS/Linux: source .venv/bin/activate)
 pip install -r requirements.txt
+pip install -e .                # makes `import jobforge` work in scripts and tests
 python -m spacy download en_core_web_sm
 
 # database (Docker maps host port 5433; a native PostgreSQL 18 owns 5432.
@@ -89,7 +90,8 @@ docker compose up -d db
 psql "$DATABASE_URL" -f sql/schema.sql
 
 # pipeline
-python scripts/fetch_jobs.py
+python scripts/fetch_jobs.py                # boards listed in data/companies.csv
+python scripts/fetch_jobs.py --only stripe  # a single board
 python scripts/load_jobs.py
 python scripts/extract_skills.py
 python scripts/index_jobs.py
@@ -143,7 +145,9 @@ Run `pytest` before considering any phase done.
 
 ## Known limitations
 
-- Long job descriptions are truncated by the embedding model's input limit.
+- Long job descriptions are truncated by the embedding model's input limit. Postings have a median of ~880 words, while all-MiniLM-L6-v2 reads about the first 200, so boilerplate at the top of a posting crowds out the requirements.
+- About half of the fetched postings are non-technical (sales, recruiting, ops), which the tech-focused skills vocabulary covers poorly.
+- `posted_at` comes from the board's first-published date; some evergreen postings date back years, so it is not a reliable freshness signal.
 - The skills vocabulary is hand-built and focused on tech roles.
 - Evaluation set is small and hand-labeled.
 
